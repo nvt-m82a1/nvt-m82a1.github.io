@@ -1,0 +1,43 @@
+span.c-type-custom {
+    color: #2b91af;
+}
+
+span.c-type-buildin {
+    color: #3800fa;
+}
+
+span.c-access {
+    color: #3800fa;
+}
+
+span.c-modifier {
+    color: #3800fa;
+}
+
+span.c-method-name {
+    color: #74531f;
+}
+
+span.c-param-name {
+    color: #1f377f;
+}
+
+span.c-type-last {
+    color: #000;
+}
+
+span.c-special {
+    color: #3800fa;
+}
+
+span.c-type-custom,
+span.c-type-buildin,
+span.c-access,
+span.c-modifier,
+span.c-method-name,
+span.c-param-name,
+span.c-type-last,
+span.c-special,
+span.c-character {
+    word-spacing: 3px;
+}

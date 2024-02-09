@@ -54,7 +54,7 @@ window.pagemodel = [
         "description": "Thêm một danh sách dữ liệu byte"
       },
       {
-        "name": "void AddArray(IEnumerable<byte> data",
+        "name": "void AddArray(IEnumerable<byte> data)",
         "description": "Thêm một mảng dữ liệu"
       },
       {

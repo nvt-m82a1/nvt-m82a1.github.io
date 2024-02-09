@@ -48,12 +48,12 @@
         var methodElement = document.createElement("div");
         methodElement.classList.add("jselement");
         methodElement.classList.add("method");
-        methodElement.textContent = methodData.name;
 
         var nameElement = document.createElement("div");
         nameElement.classList.add("jselement");
         nameElement.classList.add("method-name");
-        nameElement.textContent = methodData.name;
+        var nameSpans = getMethodElements(methodData.name);
+        nameElement.replaceChildren(...nameSpans);
 
         var descriptionElement = document.createElement("div");
         descriptionElement.classList.add("jselement");
