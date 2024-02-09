@@ -1,3 +1,4 @@
+// Hiển thị màu tiêu đề trên method của ngôn ngữ C#
 (function () {
     var mapGroup = [
         {
