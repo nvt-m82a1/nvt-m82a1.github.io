@@ -9,7 +9,7 @@
     background-color: white;
 }
 
-#footer > div {
+#footer>div {
     padding-left: 8px;
     padding-right: 8px;
 }
@@ -21,4 +21,10 @@
 
 #footer .right {
     display: flex;
+}
+
+@media screen and (max-width: 500px) {
+    #footer #app_shortcut {
+        display: none;
+    }
 }

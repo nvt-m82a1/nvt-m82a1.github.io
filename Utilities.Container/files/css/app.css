@@ -4,8 +4,14 @@
 @import url(footer.css);
 @import url(linecolors.css);
 
+@font-face {
+    font-family: "roboto";
+    src: url("fonts/Roboto-Light.ttf") format("truetype");
+}
+
 html {
     height: 100vh;
+    font-family: "roboto";
 }
 
 body {
@@ -20,4 +26,11 @@ body {
     flex-grow: 1;
     z-index: 1;
     padding-bottom: 32px;
+    overflow: scroll;
+}
+
+@media screen and (max-width: 500px) {
+    #app_body {
+        flex-direction: column;
+    }
 }
