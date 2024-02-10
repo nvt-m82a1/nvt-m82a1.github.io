@@ -5,11 +5,20 @@
     height: 32px;
     bottom: 0;
     align-items: center;
-    flex-direction: row-reverse;
     z-index: 2;
+    background-color: white;
 }
 
-#footer div {
+#footer > div {
     padding-left: 8px;
     padding-right: 8px;
+}
+
+#footer .left {
+    display: flex;
+    flex-grow: 1;
+}
+
+#footer .right {
+    display: flex;
 }

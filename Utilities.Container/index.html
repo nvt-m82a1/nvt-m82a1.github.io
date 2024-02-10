@@ -11,8 +11,8 @@
             <div id="app_name">Utilities.Container</div>
         </div>
         <div class="right">
-            <div><a target="_blank" href="https://github.com/nvt-m82a1/Utilities">Git</a></div>
-            <div>v1.0.6</div>
+            <div><a id="app_git" target="_blank" href="https://github.com/nvt-m82a1/Utilities">Git</a></div>
+            <div id="app_version">v1.0.7</div>
         </div>
     </div>
 
@@ -27,7 +27,7 @@
                 <div>- Dữ liệu danh sách: list, array, dictionary, ...</div>
                 <div>- Dữ liệu class</div>
                 <div>- Hỗ trợ tham chiếu lặp</div>
-                
+
                 <h4>Chuyển dữ liệu kiểu class sang bytes và phục hồi lại đối tượng.</h4>
                 <div>var item = new ItemType();</div>
                 <div>var data = DataConvert.Instance.GetBytes(item);</div>
@@ -37,12 +37,18 @@
     </div>
 
     <div id="footer">
-        <div>Copyright <a href="mailto:nvt.m82a1@gmail.com">nvt.m82a1@gmail.com</a></div>
+        <div class="left">
+            <div><span id="app_keys">Hotkey:</span> <span id="app_hotkey"></span></div>
+        </div>
+        <div class="right">
+            <div>Copyright <a href="mailto:nvt.m82a1@gmail.com">nvt.m82a1@gmail.com</a></div>
+        </div>
     </div>
 
     <script src="files/model/pagemodel.js"></script>
     <script src="files/js/linecolors.js"></script>
     <script src="files/js/pagerender.js"></script>
+    <script src="files/js/shortcut.js"></script>
 </body>
 
 </html>

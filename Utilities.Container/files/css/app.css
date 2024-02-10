@@ -19,4 +19,5 @@ body {
     display: flex;
     flex-grow: 1;
     z-index: 1;
+    padding-bottom: 32px;
 }
