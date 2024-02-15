@@ -5,15 +5,18 @@
             run: hotkey_ctrlh,
             "KeyH": {
                 name: "Open homepage",
-                run: hotkey_ctrlh_h
+                run: hotkey_ctrlh_h,
+                reset: true
             },
             "KeyG": {
                 name: "Open git",
-                run: hotkey_ctrlh_g
+                run: hotkey_ctrlh_g,
+                reset: true
             },
             "KeyV": {
                 name: "Open version",
-                run: hotkey_ctrlh_v
+                run: hotkey_ctrlh_v,
+                reset: true
             }
         },
         "KeyM": {
@@ -33,6 +36,7 @@
                 name: "Select menu",
                 run: hotkey_ctrm_enter,
                 skip: true,
+                reset: true
             }
         },
         "KeyP": {
@@ -45,13 +49,14 @@
             },
             "ArrowDown": {
                 name: "Move down",
-                run: hotkey_ctrp_arrowdown,
+                run: hotkey_ctrlp_arrowdown,
                 skip: true,
             },
             "Enter": {
                 name: "Select item",
-                run: hotkey_ctrp_enter,
+                run: hotkey_ctrlp_enter,
                 skip: true,
+                reset: true
             }
         },
         "KeyF": {
@@ -59,7 +64,8 @@
             run: hotkey_ctrlf,
             "KeyM": {
                 name: "Open mail",
-                run: hotkey_ctrlf_m
+                run: hotkey_ctrlf_m,
+                reset: true
             }
         },
         "KeyK": {
@@ -76,6 +82,8 @@
 
     function resetHotkey() {
         targetKey = map;
+        setAppHotkey("");
+        document.activeElement.blur();
     }
 
     // app hotkey
@@ -85,7 +93,8 @@
         apphotkey.textContent = text;
     }
     // end app hotkey
-
+    document.addEventListener('keydown', doc_OnKeydown, false);
+    
     function doc_OnKeydown(e) {
         if (e.ctrlKey && targetKey[e.code] !== undefined) {
             defaultOnKeydown(e);
@@ -94,7 +103,6 @@
         if (!e.ctrlKey && !e.shiftKey) {
             switch (e.code) {
                 case defaultKey.reset:
-                    setAppHotkey("");
                     resetHotkey();
                     e.preventDefault();
                     break;
@@ -110,11 +118,17 @@
         function defaultOnKeydown(e) {
             if (targetKey[e.code].skip === true) {
                 targetKey[e.code].run();
+                if (targetKey[e.code].reset === true) {
+                    resetHotkey();
+                }
             }
             else {
                 targetKey = targetKey[e.code];
                 setAppHotkey(targetKey.name);
                 targetKey.run();
+                if (targetKey.reset === true) {
+                    resetHotkey();
+                }
             }
             e.preventDefault();
         }
@@ -128,17 +142,14 @@
 
     function hotkey_ctrlh_h() {
         document.getElementById("app_name").click();
-        resetHotkey();
     }
 
     function hotkey_ctrlh_g() {
         document.getElementById("app_git").click();
-        resetHotkey();
     }
 
     function hotkey_ctrlh_v() {
         document.getElementById("app_version").click();
-        resetHotkey();
     }
     // end ctrl h
 
@@ -156,27 +167,32 @@
     }
 
     function hotkey_ctrlm_arrowup() {
-        var previous = menuItemFocus.previousElementSibling;
-        if (previous !== null) {
-            menuItemFocus.classList.remove("menu-select")
-            menuItemFocus = previous;
-            menuItemFocus.classList.add("menu-select")
+        var menuItem = menuItemFocus.previousElementSibling;
+        if (menuItem === null) {
+            var menu = document.getElementById("menu");
+            menuItem = menu.lastChild;
         }
+
+        menuItemFocus.classList.remove("menu-select")
+        menuItemFocus = menuItem;
+        menuItemFocus.classList.add("menu-select")
     }
 
     function hotkey_ctrm_arrowdown() {
-        var next = menuItemFocus.nextElementSibling;
-        if (next !== null) {
-            menuItemFocus.classList.remove("menu-select")
-            menuItemFocus = next;
-            menuItemFocus.classList.add("menu-select")
+        var menuItem = menuItemFocus.nextElementSibling;
+        if (menuItem === null) {
+            var menu = document.getElementById("menu");
+            menuItem = menu.firstChild;
         }
+
+        menuItemFocus.classList.remove("menu-select")
+        menuItemFocus = menuItem;
+        menuItemFocus.classList.add("menu-select")
     }
 
     function hotkey_ctrm_enter() {
         menuItemFocus.click();
         menuItemFocus.classList.remove("menu-select")
-        resetHotkey();
     }
     // end ctrl m
 
@@ -187,10 +203,10 @@
     function hotkey_ctrlp_arrowup() {
     }
 
-    function hotkey_ctrp_arrowdown() {
+    function hotkey_ctrlp_arrowdown() {
     }
 
-    function hotkey_ctrp_enter() {
+    function hotkey_ctrlp_enter() {
     }
     // end ctrl p
 
@@ -204,8 +220,7 @@
 
     // ctrl k
     function hotkey_ctrlk() {
+        document.getElementById("app_search").focus();
     }
     // end ctrl k
-
-    document.addEventListener('keydown', doc_OnKeydown, false);
 })()

@@ -12,7 +12,15 @@
 }
 
 #header #app_name {
+    min-width: 150px;
+    margin-right: 8px;
     cursor: pointer;
+}
+
+#header #app_search {
+    border: none;
+    border-bottom: 1px solid #aaa;
+    border-radius: 2px;
 }
 
 #header .left {
@@ -26,4 +34,10 @@
 #header .right div {
     padding-left: 4px;
     padding-right: 4px;
+}
+
+@media screen and (max-width: 500px) {
+    #header #app_search {
+        display: none;
+    }
 }

@@ -1,255 +1,255 @@
 window.pagemodel = [
   {
     "name": "BitContainer",
-    "description": "Xử lý dữ liệu boolean",
+    "description": "Handle boolean data",
     "methods": [
       {
         "name": "void Add(bool data)",
-        "description": "Thêm một dữ liệu boolean"
+        "description": "Add a boolean data"
       },
       {
         "name": "void AddArray(IEnumerable<bool> data)",
-        "description": "Thêm một mảng dữ liệu boolean"
+        "description": "Add an array of boolean data"
       },
       {
         "name": "bool? Read()",
-        "description": "Đọc một dữ liệu boolean"
+        "description": "Read a boolean data"
       },
       {
         "name": "bool? Scan()",
-        "description": "Quét một dữ liệu boolean"
+        "description": "Scan a boolean data"
       },
       {
         "name": "bool?[] ReadArray(int length)",
-        "description": "Đọc một mảng boolean"
+        "description": "Read a boolean array"
       },
       {
         "name": "void ReadReset()",
-        "description": "Reset cờ đọc"
+        "description": "Reset read flag"
       },
       {
         "name": "void Clear()",
-        "description": "Làm rỗng container"
+        "description": "Empty container"
       },
       {
         "name": "IEnumerable<byte> Export()",
-        "description": "Xuất dữ liệu từ container"
+        "description": "Export data from container"
       },
       {
         "name": "int Import(byte[] buffer, int start = 0)",
-        "description": "Nhập dữ liệu vào container"
+        "description": "Import data into container"
       }
     ]
   },
   {
     "name": "ByteContainer",
-    "description": "Xử lý dữ liệu byte",
+    "description": "Process byte data",
     "methods": [
       {
         "name": "void AddItem(byte data)",
-        "description": "Thêm một dữ liệu byte"
+        "description": "Add a byte data"
       },
       {
         "name": "void AddItems(byte[] data)",
-        "description": "Thêm một danh sách dữ liệu byte"
+        "description": "Add a byte data list"
       },
       {
         "name": "void AddArray(IEnumerable<byte> data)",
-        "description": "Thêm một mảng dữ liệu"
+        "description": "Add an array of data"
       },
       {
-        "name": "byte? ReadItem()",
-        "description": "Đọc một dữ liệu byte"
+        "name": "bytes? ReadItem()",
+        "description": "Read a byte data"
       },
       {
         "name": "byte[] ReadItems(int length)",
-        "description": "Đọc nhiều dữ liệu byte"
+        "description": "Read multiple byte data"
       },
       {
         "name": "byte[] ScanItems(int length)",
-        "description": "Quét nhiều dữ liệu byte"
+        "description": "Scan multiple byte data"
       },
       {
         "name": "(int, IEnumerable<byte>?) ReadArray()",
-        "description": "Đọc một mảng dữ liệu"
+        "description": "Read an array of data"
       },
       {
         "name": "void ReadReset()",
-        "description": "Reset thông tin đọc"
+        "description": "Reset reading information"
       },
       {
         "name": "void Clear()",
-        "description": "Làm rỗng container"
+        "description": "Empty container"
       },
       {
         "name": "IEnumerable<byte> Export()",
-        "description": "Xuất dữ liệu từ container"
+        "description": "Export data from container"
       },
       {
         "name": "int Import(byte[] buffer, int start = 0)",
-        "description": "Nhập dữ liệu vào container"
+        "description": "Import data into container"
       }
     ]
   },
   {
     "name": "DataContainer",
-    "description": "Xử lý dữ liệu data",
+    "description": "Data processing",
     "methods": [
       {
         "name": "void AddLength(int data)",
-        "description": "Ghi một kích thước byte hoặc integer"
+        "description": "Write a byte or integer size"
       },
       {
         "name": "int ReadLength()",
-        "description": "Đọc một kích thước byte hoặc integer"
+        "description": "Read a byte or integer size"
       },
       {
         "name": "int ScanLength()",
-        "description": "Quét trước kích thước là một byte hoặc integer"
+        "description": "Prescan size is a byte or integer"
       },
       {
         "name": "void AddBoolean(bool data)",
-        "description": "Ghi một giá trị boolean"
+        "description": "Write a boolean value"
       },
       {
         "name": "bool? ReadBoolean()",
-        "description": "Đọc một giá trị boolean"
+        "description": "Read a boolean value"
       },
       {
         "name": "void AddBooleanArray(IEnumerable<bool> data)",
-        "description": "Ghi một danh sách giá trị boolean"
+        "description": "Write a list of boolean values"
       },
       {
         "name": "IEnumerable<bool?> ReadBooleanArray(int length)",
-        "description": "Đọc một danh sách giá trị boolean"
+        "description": "Read a list of boolean values"
       },
       {
         "name": "void AddArray(IEnumerable<byte> data)",
-        "description": "Ghi một mảng dữ liệu"
+        "description": "Write an array of data"
       },
       {
         "name": "(int, IEnumerable<byte>?) ReadArray()",
-        "description": "Đọc một mảng dữ liệu"
+        "description": "Read an array of data"
       }
     ]
   },
   {
     "name": "DataBinding",
-    "description": "Đọc và ghi thành viên của class",
+    "description": "Read and write class members",
     "methods": [
       {
         "name": "byte[]? ReadMembers<T>(T item) where T : class",
-        "description": "Đọc thuộc tính trong item"
+        "description": "Read item attributes"
       },
       {
         "name": "void WriteMembers<T>(T item, byte[]? data) where T : class",
-        "description": "Ghi vào item những thuộc tính trong data"
+        "description": "Write the item's attributes in data"
       }
     ]
   },
   {
     "name": "DataConvert",
-    "description": "Đọc và ghi một kiểu dữ liệu",
+    "description": "Read and write a data type",
     "methods": [
       {
         "name": "byte[]? GetBytes<T>(T? data)",
-        "description": "Lấy dữ liệu bytes từ data"
+        "description": "Get bytes data from data"
       },
       {
         "name": "T? GetItem<T>(byte[]? data)",
-        "description": "Lấy giá trị trong data"
+        "description": "Get value from data"
       }
     ]
   },
   {
     "name": "RollbackItem",
-    "description": "Rollback một đối tượng",
+    "description": "Rollback an object",
     "methods": [
       {
         "name": "void Commit()",
-        "description": "Lưu trạng thái hiện tại"
+        "description": "Save current state"
       },
       {
         "name": "bool Rollback()",
-        "description": "Trở về trạng thái phía trước"
+        "description": "Return to previous state"
       }
     ]
   },
   {
     "name": "UndoRedoItem",
-    "description": "Undo và redo một đối tượng",
+    "description": "Undo and redo an object",
     "methods": [
       {
         "name": "void Commit()",
-        "description": "Lưu trạng thái hiện tại"
+        "description": "Save current state"
       },
       {
         "name": "void Latest()",
-        "description": "Trở về trạng thái mới nhất"
+        "description": "Return to latest status"
       },
       {
         "name": "bool Undo()",
-        "description": "Trở về trạng thái phía trước"
+        "description": "Return to previous state"
       },
       {
         "name": "bool Redo()",
-        "description": "Trở về trạng thái phía sau"
+        "description": "Return to the previous state"
       }
     ]
   },
   {
     "name": "Autosave",
-    "description": "Tự động lưu dữ liệu",
+    "description": "Auto-save data",
     "methods": [
       {
         "name": "bool Create<T>(string key, Func<T?> getValue, int timeInterval = 10, int numberOfBackup = 1)",
-        "description": "Thêm một luồng backup dữ liệu"
+        "description": "Add a data backup stream"
       },
       {
         "name": "T? Get<T>(string key, int reverseIndex = 0)",
-        "description": "Lấy một bản dữ liệu"
+        "description": "Get a copy of the data"
       },
       {
         "name": "T? Get<T>(string key, long timestamp, int reverseIndex = 0)",
-        "description": "Lấy một bản dữ liệu trước thời điểm"
+        "description": "Get a copy of the data before the time"
       },
       {
         "name": "void Stop(string key)",
-        "description": "Dừng một luồng sao lưu"
+        "description": "Stop a backup stream"
       }
     ]
   },
   {
     "name": "Backup",
-    "description": "Tập hợp những bản lưu trữ dữ liệu",
+    "description": "Collection of data archives",
     "methods": [
       {
         "name": "bool Setup(string key, int numberOfBackup)",
-        "description": "Tạo một bản lưu trữ dữ liệu"
+        "description": "Create a data archive"
       },
       {
         "name": "bool Add<T>(string key, T value)",
-        "description": "Thêm dữ liệu vào bản lưu trữ"
+        "description": "Add data to archive"
       },
       {
         "name": "bool Import(string key, byte[] data)",
-        "description": "Thêm dữ liệu là một bản ghi backup"
+        "description": "Add data as a backup record"
       },
       {
         "name": "byte[]? Export(string key, int reverseIndex = 0)",
-        "description": "Lấy một bản ghi backup"
+        "description": "Get a backup record"
       },
       {
         "name": "byte[]? Export(string key, long timestamp, int reverseIndex = 0)",
-        "description": "Lấy một bản ghi backup trước thời điểm"
+        "description": "Get a previous backup record"
       },
       {
         "name": "T? Get<T>(string key, int reverseIndex = 0)",
-        "description": "Lấy một bản lưu trữ là một class"
+        "description": "Gets an archive as a class"
       },
       {
         "name": "T? Get<T>(string key, long timestamp, int reverseIndex = 0)",
-        "description": "Lấy một bản lưu trữ là một class trước thời điểm"
+        "description": "Get an archive of a class before the time"
       }
     ]
   }
